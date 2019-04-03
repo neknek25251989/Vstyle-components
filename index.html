@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script src="./vue-styled-components.js"></script>
+
+    <script>
+
+        const btnProps = {primary: true};
+        const btn = styled.default.div`
+        padding: 10px 20px;
+        width: 200px;
+
+        color: ${props => props.primary ? 'red' : 'blue'};
+
+        border: 2px solid #efabcd;
+        `
+
+        new Vue({
+            el: "#app",
+            template:`
+            <div>
+                <btn>Submit</btn>
+                <btn primary>Submit</btn>
+                </div>
+            `,
+            components: {
+                btn: btn
+            }
+        })
+    </script>
+
+</body>
+</html>
